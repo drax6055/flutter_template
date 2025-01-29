@@ -1,4 +1,4 @@
-# my_manga
+# flutter_template
 
 this project created by dhairya soni
 
