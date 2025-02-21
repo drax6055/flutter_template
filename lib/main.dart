@@ -1,34 +1,31 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_secure_storage/flutter_secure_storage.dart';
+import 'package:flutter_template/route/app_page.dart';
+import 'package:flutter_template/route/app_route.dart';
+import 'package:get/get.dart';
+
+FlutterSecureStorage? storage;
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Flutter Template',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: HomeScreen(),
-    );
-  }
-}
-
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+  const MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Title here'),
-      ),
-      body: Center(
-        child: Text('Flutter Template'),
+    return ScreenUtilInit(
+      designSize: ScreenUtil.defaultSize,
+      child: GetMaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: 'Flutter Template',
+        theme: ThemeData(
+          primarySwatch: Colors.teal,
+        ),
+        initialRoute: Routes.splashScreen,
+        getPages: AppPages.routes,
       ),
     );
   }
