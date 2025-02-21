@@ -1,5 +1,7 @@
 import 'dart:convert';
 
+import 'package:flutter_template/route/app_route.dart';
+import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../main.dart';
@@ -26,9 +28,13 @@ class SharedPreferenceManager {
   Future<void> setUser(Login? user) async {
     return await storage?.write(key: KEY_USER, value: jsonEncode(user));
   }
-  void onLogout() async {
-    setUser(null);
-    storage?.delete(key: KEY_USER);
+
+  
+  Future<void> onLogout() async {
+    await removeAccessToken();
+    await setUser(null);
+    await storage?.delete(key: KEY_USER);
+    Get.offAllNamed(Routes.loginScreen);  
   }
 
   Future<Login?> getUser() async {
@@ -44,6 +50,7 @@ class SharedPreferenceManager {
       return null;
     }
   }
+  
   Future<String?> getToken() async {
     var user = await getUser();
     if (user != null) {

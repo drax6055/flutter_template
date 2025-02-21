@@ -12,7 +12,11 @@ class DashboardScreen extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         body: Center(
-          child: Text('Dashboard Screen'),
+          child: ElevatedButton(
+              onPressed: () async {
+                await getController.onLogoutPress();
+              },
+              child: Text('Logout')),
         ),
       ),
     );
