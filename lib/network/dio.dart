@@ -1,4 +1,3 @@
-import 'dart:io';
 import 'package:dio/dio.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 
@@ -40,25 +39,6 @@ class DioClient {
       throw errorMessage;
     }
   }
-
-  // Future<Add_model> postDoc(String endpoint, File file) async {
-  //   try {
-  //     FormData formData = FormData.fromMap({
-  //       'file': await MultipartFile.fromFile(file.path, filename: file.path
-  //           .split('/')
-  //           .last),
-  //     });
-  //     final response = await dio.post(endpoint, data: formData);
-  //     if (response.statusCode == 200) {
-  //       return Add_model.fromJson(response.data);
-  //     } else {
-  //       throw Exception('Failed to upload file: ${response.statusCode}');
-  //     }
-  //   }catch(e){
-  //     final errorMessage = e.toString();
-  //     throw errorMessage;
-  //   }
-  // }
 
 }
 

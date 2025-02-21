@@ -40,4 +40,5 @@ class LoginController extends GetxController {
       Get.snackbar('Error', '$e');
     }
   }
+  
 }
