@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../utils/colors.dart';
+
 class CustomTextFormField extends StatelessWidget {
   final TextEditingController? controller;
   final String? hintText;
@@ -9,7 +11,7 @@ class CustomTextFormField extends StatelessWidget {
   final bool obscureText;
   final TextInputType keyboardType;
   final FormFieldValidator<String>? validator;
-  final TextStyle labelStyle = TextStyle(color: Colors.teal);
+  final TextStyle labelStyle = TextStyle(color: primaryColor);
 
   CustomTextFormField({
     Key? key,
@@ -30,6 +32,7 @@ class CustomTextFormField extends StatelessWidget {
       obscureText: obscureText,
       keyboardType: keyboardType,
       validator: validator,
+      cursorColor: primaryColor,
       decoration: InputDecoration(
         hintText: hintText,
         labelText: labelText,
@@ -39,21 +42,21 @@ class CustomTextFormField extends StatelessWidget {
         border: const OutlineInputBorder(
           borderRadius: BorderRadius.all(Radius.circular(8.0)),
           borderSide: BorderSide(
-            color: Colors.teal,
+            color: grey,
             width: 1.0,
           ),
         ),
         focusedBorder: const OutlineInputBorder(
           borderRadius: BorderRadius.all(Radius.circular(8.0)),
           borderSide: BorderSide(
-            color: Colors.teal,
+            color: primaryColor,
             width: 2.0,
           ),
         ),
         errorBorder: const OutlineInputBorder(
           borderRadius: BorderRadius.all(Radius.circular(8.0)),
           borderSide: BorderSide(
-            color: Colors.red,
+            color: red,
             width: 1.0,
           ),
         ),

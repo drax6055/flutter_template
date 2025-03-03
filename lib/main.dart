@@ -1,13 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:flutter_template/route/app_page.dart';
 import 'package:flutter_template/route/app_route.dart';
+import 'package:flutter_template/utils/colors.dart';
 import 'package:get/get.dart';
 
 FlutterSecureStorage? storage;
 
 void main() {
+  SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+    systemNavigationBarColor: primaryColor,
+    statusBarColor: primaryColor,
+  ));
   runApp(const MyApp());
 }
 
@@ -20,10 +26,7 @@ class MyApp extends StatelessWidget {
       designSize: ScreenUtil.defaultSize,
       child: GetMaterialApp(
         debugShowCheckedModeBanner: false,
-        title: 'Flutter Template',
-        theme: ThemeData(
-          primarySwatch: Colors.teal,
-        ),
+        title: 'iFloriana_Super_Admin',
         initialRoute: Routes.splashScreen,
         getPages: AppPages.routes,
       ),

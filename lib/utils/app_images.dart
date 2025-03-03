@@ -1,8 +1,7 @@
 
 class AppImages {
   AppImages._();
-
-  static final String profile_image = 'assets/images/images/profile.png';
+  static final String splash_img = 'assets/images/img/splash_logo.png';
 
 }
 

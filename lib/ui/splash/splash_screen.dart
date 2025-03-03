@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_template/ui/splash/splash_controller.dart';
+import 'package:flutter_template/utils/colors.dart';
 import 'package:get/get.dart';
 
-import '../../constants/app_images.dart';
+import '../../utils/app_images.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});
@@ -16,10 +18,11 @@ class SplashScreen extends StatelessWidget {
       child: Scaffold(
         body: Container(
           decoration: BoxDecoration(
-            color: Colors.blue,
+            color: primaryColor,
           ),
           child: Center(
-              child: Image.asset(AppImages.profile_image),
+              child: Image.asset(AppImages.splash_img,
+                  width: 120.w, height: 150.h, fit: BoxFit.fill),
         ),
       ),
       )
