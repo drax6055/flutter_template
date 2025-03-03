@@ -15,17 +15,16 @@ class SplashScreen extends StatelessWidget {
     getController.navigateToNextScreen();
 
     return SafeArea(
-      child: Scaffold(
-        body: Container(
-          decoration: BoxDecoration(
-            color: primaryColor,
-          ),
-          child: Center(
-              child: Image.asset(AppImages.splash_img,
-                  width: 120.w, height: 150.h, fit: BoxFit.fill),
+        child: Scaffold(
+      body: Container(
+        decoration: BoxDecoration(
+          color: primaryColor,
+        ),
+        child: Center(
+          child: Image.asset(AppImages.splash_img,
+              width: 120.w, height: 120.h, fit: BoxFit.fill),
         ),
       ),
-      )
-    );
+    ));
   }
 }

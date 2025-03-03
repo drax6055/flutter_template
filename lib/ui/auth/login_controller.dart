@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_template/utils/colors.dart';
 import 'package:get/get.dart';
 import '../../commen_items/sharePrafrence.dart';
 import '../../network/dio.dart';
@@ -21,24 +22,30 @@ class LoginController extends GetxController {
     final dioClient = DioClient();
 
     Map<String, dynamic> loginData = {
-      'username': emailController.text,  // 'emilys',
-      'password': passController.text,   // 'emilyspass'
+      'username': emailController.text, // 'emilys',
+      'password': passController.text, // 'emilyspass'
     };
 
     try {
       Login loginResponse = await dioClient.postData<Login>(
         '${Apis.baseUrl}${Endpoints.login}',
         loginData,
-            (json) => Login.fromJson(json),
+        (json) => Login.fromJson(json),
       );
 
       await _prefs.setUser(loginResponse);
       await _prefs.saveAccessToken(loginResponse.accessToken!);
       Get.offNamed(Routes.dashboardScreen);
-     
     } catch (e) {
-      Get.snackbar('Error', '$e');
+      Get.snackbar(
+        'Error',
+        "Invalid username or password",
+        snackPosition: SnackPosition.BOTTOM,
+        leftBarIndicatorColor: red,
+        backgroundColor: red.withOpacity(0.1),
+        borderRadius: 10,
+        margin: EdgeInsets.all(10),
+      );
     }
   }
-  
 }

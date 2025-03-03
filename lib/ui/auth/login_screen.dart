@@ -6,7 +6,7 @@ import '../../wiget/Custome_button.dart';
 import 'login_controller.dart';
 
 class LoginScreen extends StatelessWidget {
- LoginScreen({super.key});
+  LoginScreen({super.key});
   final LoginController getController = Get.put(LoginController());
 
   @override
@@ -39,27 +39,29 @@ class LoginScreen extends StatelessWidget {
       controller: getController.emailController,
       hintText: 'Enter your Email',
       labelText: 'Email',
-      prefixIcon: Icons.email,
+      // prefixIcon: Icons.email,
       keyboardType: TextInputType.emailAddress,
     );
   }
 
   Widget InputTxtfield_Pass() {
     return Obx(() => CustomTextFormField(
-      controller: getController.passController,
-      hintText: 'Enter your Password',
-      labelText: 'Password',
-      prefixIcon: Icons.password,
-      obscureText: !getController.showPass.value,
-      suffixIcon: IconButton(
-        onPressed: () {
-          getController.toggleShowPass();
-        },
-        icon: Icon(
-          getController.showPass.value ? Icons.visibility : Icons.visibility_off,
-        ),
-      ),
-    ));
+          controller: getController.passController,
+          hintText: 'Enter your Password',
+          labelText: 'Password',
+          // prefixIcon: Icons.password,
+          obscureText: !getController.showPass.value,
+          suffixIcon: IconButton(
+            onPressed: () {
+              getController.toggleShowPass();
+            },
+            icon: Icon(
+              getController.showPass.value
+                  ? Icons.visibility
+                  : Icons.visibility_off,
+            ),
+          ),
+        ));
   }
 
   Widget Btn_Login() {
