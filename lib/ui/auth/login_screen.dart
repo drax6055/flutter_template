@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_template/utils/colors.dart';
 import 'package:get/get.dart';
 import '../../wiget/Custome_textfield.dart';
 import '../../wiget/Custome_button.dart';
@@ -12,25 +13,16 @@ class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Login'),
-      ),
-      body: Padding(
-        padding: EdgeInsets.all(16.h),
-        child: Form(
+      body:  Form(
           child: SingleChildScrollView(
             child: Column(
               children: [
-                InputTxtfield_Email(),
-                SizedBox(height: 16.h),
-                InputTxtfield_Pass(),
-                SizedBox(height: 16.h),
-                Btn_Login(),
+               Login_screen(),
               ],
             ),
           ),
         ),
-      ),
+    
     );
   }
 
@@ -72,4 +64,44 @@ class LoginScreen extends StatelessWidget {
       },
     );
   }
+     Widget login_screen_header() {
+      return Stack(
+        children: [
+          Container(
+            height: 150.h,
+            width: double.infinity,
+            decoration: BoxDecoration(
+              color: primaryColor,
+              borderRadius: BorderRadius.only(
+                bottomLeft: Radius.circular(20),
+                bottomRight: Radius.circular(20),
+              ),
+            ),
+          )
+        ],
+      );
+     }
+
+   Widget login_screen_body() {
+    return Padding(
+      padding: const EdgeInsets.all(16),
+      child: Column(
+        children: [
+          InputTxtfield_Email(),
+          SizedBox(height: 16.h),
+          InputTxtfield_Pass(),
+          SizedBox(height: 16.h),
+          Btn_Login(),
+        ],
+      ),
+    );
+   }
+   Widget Login_screen(){
+    return Column(
+      children: [
+        login_screen_header(),
+        login_screen_body(),
+      ],
+    );
+   }
 }
