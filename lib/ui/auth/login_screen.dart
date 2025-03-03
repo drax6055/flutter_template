@@ -64,23 +64,40 @@ class LoginScreen extends StatelessWidget {
       },
     );
   }
-     Widget login_screen_header() {
-      return Stack(
-        children: [
-          Container(
-            height: 150.h,
-            width: double.infinity,
-            decoration: BoxDecoration(
-              color: primaryColor,
-              borderRadius: BorderRadius.only(
-                bottomLeft: Radius.circular(20),
-                bottomRight: Radius.circular(20),
-              ),
-            ),
-          )
-        ],
-      );
-     }
+Widget login_screen_header() {
+  return Stack(
+    clipBehavior: Clip.none,
+    alignment: Alignment.center,
+    children: [
+      Container(
+        height: 150.h,
+        width: double.infinity,
+        decoration: BoxDecoration(
+          color: primaryColor,
+          borderRadius: BorderRadius.only(
+            bottomLeft: Radius.circular(20),
+            bottomRight: Radius.circular(20),
+          ),
+        ),
+      ),
+      Positioned(
+        bottom: -60,
+        child: CircleAvatar(
+          radius: 60,
+          backgroundColor: Colors.white,
+        ),
+      )
+  //     Align(
+  //       alignment: Alignment.center,
+  // 0      child: CircleAvatar(
+  //           radius: 60,
+  //           backgroundColor: Colors.white,
+  //         ),
+  //     ),
+    ],
+  );
+}
+
 
    Widget login_screen_body() {
     return Padding(
