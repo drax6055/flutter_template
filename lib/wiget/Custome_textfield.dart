@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 
 import '../utils/colors.dart';
@@ -33,6 +35,7 @@ class CustomTextFormField extends StatelessWidget {
       keyboardType: keyboardType,
       validator: validator,
       cursorColor: primaryColor,
+      selectionHeightStyle: BoxHeightStyle.tight,
       decoration: InputDecoration(
         hintText: hintText,
         labelText: labelText,

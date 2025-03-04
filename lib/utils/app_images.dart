@@ -2,6 +2,9 @@
 class AppImages {
   AppImages._();
   static final String splash_img = 'assets/images/img/splash_logo.png';
+  static final String applogo = 'assets/images/img/demo.jpg'; 
+
+
 
 }
 

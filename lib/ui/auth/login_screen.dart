@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_template/utils/app_images.dart';
 import 'package:flutter_template/utils/colors.dart';
 import 'package:get/get.dart';
 import '../../wiget/Custome_textfield.dart';
@@ -70,7 +71,7 @@ Widget login_screen_header() {
     alignment: Alignment.center,
     children: [
       Container(
-        height: 150.h,
+        height: 170.h,
         width: double.infinity,
         decoration: BoxDecoration(
           color: primaryColor,
@@ -81,10 +82,10 @@ Widget login_screen_header() {
         ),
       ),
       Positioned(
-        bottom: -60,
+        bottom: -50,
         child: CircleAvatar(
-          radius: 60,
-          backgroundColor: Colors.white,
+          radius: 70,
+          foregroundImage: AssetImage(AppImages.applogo,),
         ),
       )
     ],
@@ -97,6 +98,7 @@ Widget login_screen_header() {
       padding: const EdgeInsets.all(16),
       child: Column(
         children: [
+          SizedBox(height: 30.h),
           InputTxtfield_Email(),
           SizedBox(height: 16.h),
           InputTxtfield_Pass(),

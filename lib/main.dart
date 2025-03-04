@@ -24,6 +24,13 @@ class MyApp extends StatelessWidget {
     return ScreenUtilInit(
       designSize: ScreenUtil.defaultSize,
       child: GetMaterialApp(
+        theme: ThemeData(
+          textSelectionTheme: TextSelectionThemeData(
+            cursorColor: primaryColor,
+            selectionColor: secondaryColor,
+            selectionHandleColor: primaryColor,
+          ),
+        ),
         debugShowCheckedModeBanner: false,
         title: 'iFloriana_Super_Admin',
         initialRoute: Routes.splashScreen,
