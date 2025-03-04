@@ -87,13 +87,6 @@ Widget login_screen_header() {
           backgroundColor: Colors.white,
         ),
       )
-  //     Align(
-  //       alignment: Alignment.center,
-  // 0      child: CircleAvatar(
-  //           radius: 60,
-  //           backgroundColor: Colors.white,
-  //         ),
-  //     ),
     ],
   );
 }
