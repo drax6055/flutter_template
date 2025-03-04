@@ -34,7 +34,8 @@ class SplashScreen extends StatelessWidget {
             ),
           child: CircleAvatar(
             radius: 70.r,
-            foregroundImage: AssetImage(AppImages.applogo,),
+            backgroundColor: primaryColor,
+            foregroundImage: AssetImage(AppImages.applogo),
           ),
         ),
         ),

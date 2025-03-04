@@ -55,10 +55,10 @@ class ElevatedButtonExample extends StatelessWidget {
 
   ButtonStyle _defaultStyle() {
     return ElevatedButton.styleFrom(
-      backgroundColor: primaryColor, // Button color
-      foregroundColor: white, // Text color
+      backgroundColor: primaryColor,
+      foregroundColor: white, 
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(10), // Border radius
+        borderRadius: BorderRadius.circular(10),  
       ),
     );
   }

@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 
 import '../utils/colors.dart';
+import '../utils/custom_text_styles.dart';
 
 class CustomTextFormField extends StatelessWidget {
   final TextEditingController? controller;
@@ -13,7 +14,7 @@ class CustomTextFormField extends StatelessWidget {
   final bool obscureText;
   final TextInputType keyboardType;
   final FormFieldValidator<String>? validator;
-  final TextStyle labelStyle = TextStyle(color: primaryColor);
+  final TextStyle labelStyle = CustomTextStyles.bodyText;
 
   CustomTextFormField({
     Key? key,

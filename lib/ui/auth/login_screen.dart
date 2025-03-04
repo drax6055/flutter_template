@@ -3,8 +3,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_template/utils/app_images.dart';
 import 'package:flutter_template/utils/colors.dart';
 import 'package:get/get.dart';
+import '../../utils/custom_text_styles.dart';
 import '../../wiget/Custome_textfield.dart';
 import '../../wiget/Custome_button.dart';
+import '../../wiget/custome_text.dart';
 import 'login_controller.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -96,6 +98,7 @@ Widget login_screen_header() {
             ),
           child: CircleAvatar(
             radius: 70,
+            backgroundColor: primaryColor,
             foregroundImage: AssetImage(AppImages.applogo,),
           ),
         ),
@@ -110,7 +113,9 @@ Widget login_screen_header() {
       padding: const EdgeInsets.all(16),
       child: Column(
         children: [
-          SizedBox(height: 30.h),
+          CustomTextWidget(
+           text: 'Login'
+          ),
           InputTxtfield_Email(),
           SizedBox(height: 16.h),
           InputTxtfield_Pass(),
@@ -124,6 +129,7 @@ Widget login_screen_header() {
     return Column(
       children: [
         login_screen_header(),
+        SizedBox(height: 40.h),
         login_screen_body(),
       ],
     );
