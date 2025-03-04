@@ -83,9 +83,21 @@ Widget login_screen_header() {
       ),
       Positioned(
         bottom: -50,
-        child: CircleAvatar(
-          radius: 70,
-          foregroundImage: AssetImage(AppImages.applogo,),
+        child: Container(
+           decoration: BoxDecoration(
+            shape: BoxShape.circle,
+            boxShadow: [
+              BoxShadow(
+                  blurRadius: 10, 
+                  color: secondaryColor, 
+                  spreadRadius: 6
+                  )
+                ],
+            ),
+          child: CircleAvatar(
+            radius: 70,
+            foregroundImage: AssetImage(AppImages.applogo,),
+          ),
         ),
       )
     ],

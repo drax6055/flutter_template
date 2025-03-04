@@ -21,8 +21,22 @@ class SplashScreen extends StatelessWidget {
           color: primaryColor,
         ),
         child: Center(
-          child: Image.asset(AppImages.applogo,
-              width: 150.w, height: 130.h, fit: BoxFit.fill),
+          child: Container(
+           decoration: BoxDecoration(
+            shape: BoxShape.circle,
+            boxShadow: [
+              BoxShadow(
+                  blurRadius: 10.r, 
+                  color: secondaryColor, 
+                  spreadRadius: 10.r
+                  )
+                ],
+            ),
+          child: CircleAvatar(
+            radius: 70.r,
+            foregroundImage: AssetImage(AppImages.applogo,),
+          ),
+        ),
         ),
       ),
     ));
