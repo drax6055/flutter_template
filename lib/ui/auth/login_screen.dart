@@ -18,12 +18,10 @@ class LoginScreen extends StatelessWidget {
     return Scaffold(
       body:  Form(
           child: SingleChildScrollView(
-            child: SingleChildScrollView(
-              child: Column(
-                children: [
-                 Login_screen(),
-                ],
-              ),
+            child: Column(
+              children: [
+               Login_screen(),
+              ],
             ),
           ),
         ),
@@ -139,7 +137,7 @@ Widget login_screen_header() {
     return Column(
       children: [
         login_screen_header(),
-        SizedBox(height: 40.h),
+        SizedBox(height: 45.h),
         login_screen_body(),
       ],
     );
