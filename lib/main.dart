@@ -10,11 +10,18 @@ import 'package:get/get.dart';
 FlutterSecureStorage? storage;
 
 void main() {
+   WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
     systemNavigationBarColor: primaryColor,
     statusBarColor: primaryColor,
   ));
-  runApp(const MyApp());
+  SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitUp,   
+    DeviceOrientation.portraitDown, 
+  ]).then((_) {
+    runApp(MyApp());
+  });
+
 }
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
