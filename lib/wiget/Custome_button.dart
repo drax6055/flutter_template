@@ -39,7 +39,7 @@ class ElevatedButtonExample extends StatelessWidget {
                 icon: icon!,
                 label: Text(
                   text,
-                  style: CustomTextStyles.textFontSemiBold(size: 16.sp,color: white),
+                  style: CustomTextStyles.textFontSemiBold(size: 14.sp,color: white),
                 ),
                 style: style ?? _defaultStyle(),
               )
@@ -48,7 +48,7 @@ class ElevatedButtonExample extends StatelessWidget {
                 onLongPress: onLongPress,
                 style: style ?? _defaultStyle(),
                 child: Text(text,
-                    style: CustomTextStyles.textFontSemiBold(size: 16.sp,color: white)),
+                    style: CustomTextStyles.textFontSemiBold(size: 14.sp,color: white)),
               ),
       ),
     );
