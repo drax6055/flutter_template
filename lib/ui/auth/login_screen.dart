@@ -54,6 +54,7 @@ class LoginScreen extends StatelessWidget {
               getController.showPass.value
                   ? Icons.visibility
                   : Icons.visibility_off,
+                  color: grey,
             ),
           ),
         ));
