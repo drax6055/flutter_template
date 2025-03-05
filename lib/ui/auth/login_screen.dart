@@ -18,10 +18,12 @@ class LoginScreen extends StatelessWidget {
     return Scaffold(
       body:  Form(
           child: SingleChildScrollView(
-            child: Column(
-              children: [
-               Login_screen(),
-              ],
+            child: SingleChildScrollView(
+              child: Column(
+                children: [
+                 Login_screen(),
+                ],
+              ),
             ),
           ),
         ),
@@ -116,7 +118,7 @@ Widget login_screen_header() {
         children: [
           CustomTextWidget(
            text: 'Welcome Back!',
-            textStyle: CustomTextStyles.textFontSemiBold(size: 14.sp),
+            textStyle: CustomTextStyles.textFontSemiBold(size: 16.sp),
           ),
            SizedBox(height: 3.h),
            CustomTextWidget(
