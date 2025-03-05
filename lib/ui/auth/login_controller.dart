@@ -22,8 +22,8 @@ class LoginController extends GetxController {
     final dioClient = DioClient();
 
     Map<String, dynamic> loginData = {
-      'username': emailController.text, // 'emilys',
-      'password': passController.text, // 'emilyspass'
+      'email': emailController.text, 
+      'password': passController.text, 
     };
 
     try {
@@ -34,7 +34,7 @@ class LoginController extends GetxController {
       );
 
       await _prefs.setUser(loginResponse);
-      await _prefs.saveAccessToken(loginResponse.accessToken!);
+      await _prefs.saveAccessToken(loginResponse.token!);
       Get.offNamed(Routes.dashboardScreen);
     } catch (e) {
       Get.snackbar(

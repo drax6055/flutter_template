@@ -32,7 +32,7 @@ class LoginScreen extends StatelessWidget {
   Widget InputTxtfield_Email() {
     return CustomTextFormField(
       controller: getController.emailController,
-      hintText: 'Enter your Email',
+      // hintText: 'Enter your Email',
       labelText: 'Email',
       // prefixIcon: Icons.email,
       keyboardType: TextInputType.emailAddress,
@@ -42,7 +42,7 @@ class LoginScreen extends StatelessWidget {
   Widget InputTxtfield_Pass() {
     return Obx(() => CustomTextFormField(
           controller: getController.passController,
-          hintText: 'Enter your Password',
+          // hintText: 'Enter your Password',
           labelText: 'Password',
           // prefixIcon: Icons.password,
           obscureText: !getController.showPass.value,
@@ -114,12 +114,19 @@ Widget login_screen_header() {
       child: Column(
         children: [
           CustomTextWidget(
-           text: 'Login'
+           text: 'Welcome Back!',
+            textStyle: CustomTextStyles.textFontSemiBold(size: 14.sp),
           ),
+           SizedBox(height: 3.h),
+           CustomTextWidget(
+           text: 'You Have Been Missed For Long Time',
+            textStyle: CustomTextStyles.textFontSemiBold(size: 12.sp,color: grey),
+          ),
+            SizedBox(height: 20.h),
           InputTxtfield_Email(),
           SizedBox(height: 16.h),
           InputTxtfield_Pass(),
-          SizedBox(height: 16.h),
+          SizedBox(height: 50.h),
           Btn_Login(),
         ],
       ),

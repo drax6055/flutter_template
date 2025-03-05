@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../utils/colors.dart';
 import '../utils/custom_text_styles.dart';
@@ -14,7 +15,7 @@ class CustomTextFormField extends StatelessWidget {
   final bool obscureText;
   final TextInputType keyboardType;
   final FormFieldValidator<String>? validator;
-  final TextStyle labelStyle = CustomTextStyles.bodyText;
+  final TextStyle labelStyle = CustomTextStyles.textFontMedium(size: 14.sp);
 
   CustomTextFormField({
     Key? key,
@@ -39,7 +40,7 @@ class CustomTextFormField extends StatelessWidget {
       decoration: InputDecoration(
         hintText: hintText,
         labelText: labelText,
-        labelStyle: labelStyle,
+        labelStyle: CustomTextStyles.textFontMedium(size: 14.sp,color: grey),
         prefixIcon: prefixIcon != null ? Icon(prefixIcon) : null,
         suffixIcon: suffixIcon,
         border: const OutlineInputBorder(

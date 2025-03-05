@@ -54,7 +54,7 @@ class SharedPreferenceManager {
   Future<String?> getToken() async {
     var user = await getUser();
     if (user != null) {
-      return user.accessToken;
+      return user.token;
     } else {
       return "";
     }

@@ -1,5 +1,5 @@
 class Apis {
-  static const baseUrl = 'https://dummyjson.com/auth/';
+  static const baseUrl = 'http://192.168.1.7:80/api/';
 }
 
 class Endpoints {

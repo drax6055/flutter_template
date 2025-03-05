@@ -1,48 +1,57 @@
 class Login {
-  String? accessToken;
-  String? refreshToken;
-  int? id;
-  String? username;
-  String? email;
-  String? firstName;
-  String? lastName;
-  String? gender;
-  String? image;
+  String? token;
+  User? user;
 
-  Login(
-      {this.accessToken,
-      this.refreshToken,
-      this.id,
-      this.username,
-      this.email,
-      this.firstName,
-      this.lastName,
-      this.gender,
-      this.image});
+  Login({this.token, this.user});
 
   Login.fromJson(Map<String, dynamic> json) {
-    accessToken = json['accessToken'];
-    refreshToken = json['refreshToken'];
-    id = json['id'];
-    username = json['username'];
-    email = json['email'];
-    firstName = json['firstName'];
-    lastName = json['lastName'];
-    gender = json['gender'];
-    image = json['image'];
+    token = json['token'];
+    user = json['user'] != null ? new User.fromJson(json['user']) : null;
   }
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['accessToken'] = this.accessToken;
-    data['refreshToken'] = this.refreshToken;
+    data['token'] = this.token;
+    if (this.user != null) {
+      data['user'] = this.user!.toJson();
+    }
+    return data;
+  }
+}
+
+class User {
+  int? id;
+  String? name;
+  String? email;
+  Null? emailVerifiedAt;
+  String? createdAt;
+  String? updatedAt;
+
+  User(
+      {this.id,
+      this.name,
+      this.email,
+      this.emailVerifiedAt,
+      this.createdAt,
+      this.updatedAt});
+
+  User.fromJson(Map<String, dynamic> json) {
+    id = json['id'];
+    name = json['name'];
+    email = json['email'];
+    emailVerifiedAt = json['email_verified_at'];
+    createdAt = json['created_at'];
+    updatedAt = json['updated_at'];
+  }
+
+  Map<String, dynamic> toJson() {
+    final Map<String, dynamic> data = new Map<String, dynamic>();
     data['id'] = this.id;
-    data['username'] = this.username;
+    data['name'] = this.name;
     data['email'] = this.email;
-    data['firstName'] = this.firstName;
-    data['lastName'] = this.lastName;
-    data['gender'] = this.gender;
-    data['image'] = this.image;
+    data['email_verified_at'] = this.emailVerifiedAt;
+    data['created_at'] = this.createdAt;
+    data['updated_at'] = this.updatedAt;
     return data;
   }
 }

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../utils/custom_text_styles.dart'; 
 
 class CustomTextWidget extends StatelessWidget {
   final String text;
@@ -14,11 +16,12 @@ class CustomTextWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Align(
-      alignment: Alignment.center,  // Default alignment can be changed
+      alignment: Alignment.center,
       child: Text(
         text,
         textAlign: textAlign,
-        style: textStyle ?? TextStyle(fontSize: 16, color: Colors.black),
+        style: textStyle ??
+            CustomTextStyles.textFontRegular(size: 16.sp), 
       ),
     );
   }
