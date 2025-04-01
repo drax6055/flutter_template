@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:easy_localization/easy_localization.dart';
+import '../widgets/localized_text.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -8,10 +8,10 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(tr('home')),
+        title: const text('home'),
       ),
       body: Center(
-        child: Text(tr('welcome')),
+        child: const text('welcome'),
       ),
     );
   }

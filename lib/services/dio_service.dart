@@ -3,9 +3,10 @@ import 'package:dio/dio.dart';
 class DioService {
   static final Dio _dio = Dio();
 
+
+
   static void init() {
-    // Configure Dio instance if needed
-    _dio.options.baseUrl = 'https://example.com/api';
+    _dio.options.baseUrl = 'https://dummyjson.com/auth';
     _dio.options.connectTimeout = const Duration(seconds: 5);
     _dio.options.receiveTimeout = const Duration(seconds: 3);
   }

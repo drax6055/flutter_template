@@ -11,7 +11,7 @@ class LoginController extends GetxController {
 
   void login() async {
     final loginData = {
-      "email": emailController.text,
+      "username": emailController.text,
       "password": passwordController.text,
     };
 

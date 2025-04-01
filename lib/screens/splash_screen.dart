@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:easy_localization/easy_localization.dart';
 import '../controllers/splash_controller.dart';
+import '../widgets/localized_text.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});
@@ -12,7 +12,7 @@ class SplashScreen extends StatelessWidget {
 
     return Scaffold(
       body: Center(
-        child: Text(tr('splash')),
+        child: const text('splash'),
       ),
     );
   }
