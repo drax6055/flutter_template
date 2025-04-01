@@ -2,7 +2,6 @@ import 'package:flutter_template/routes/app_pages.dart';
 import 'package:get/get.dart';
 import '../services/auth_service.dart';
 
-
 class SplashController extends GetxController {
   @override
   void onInit() {

@@ -7,7 +7,6 @@ class RegisterController extends GetxController {
   final passwordController = TextEditingController();
 
   void register() {
-
     Get.offNamed(Routes.loginScreen);
   }
 

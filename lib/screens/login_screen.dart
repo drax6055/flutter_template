@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:easy_localization/easy_localization.dart';
 import '../controllers/login_controller.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -10,28 +11,28 @@ class LoginScreen extends StatelessWidget {
     var getcontroller = Get.put(LoginController());
 
     return Scaffold(
-      appBar: AppBar(title: const Text('Login')),
+      appBar: AppBar(title: Text(tr('login'))),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
           children: [
             TextField(
               controller: getcontroller.emailController,
-              decoration: const InputDecoration(labelText: 'Email'),
+              decoration: InputDecoration(labelText: tr('email')),
             ),
             TextField(
               controller: getcontroller.passwordController,
-              decoration: const InputDecoration(labelText: 'Password'),
+              decoration: InputDecoration(labelText: tr('password')),
               obscureText: true,
             ),
             const SizedBox(height: 20),
             ElevatedButton(
               onPressed: getcontroller.login,
-              child: const Text('Login'),
+              child: Text(tr('login')),
             ),
             TextButton(
               onPressed: getcontroller.navigateToRegister,
-              child: const Text('Register'),
+              child: Text(tr('register')),
             ),
           ],
         ),

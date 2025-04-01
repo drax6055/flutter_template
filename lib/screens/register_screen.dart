@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:easy_localization/easy_localization.dart';
 import '../controllers/register_controller.dart';
 
 class RegisterScreen extends StatelessWidget {
@@ -7,27 +8,27 @@ class RegisterScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var getcontroller =  Get.put(RegisterController()); 
+    var getcontroller = Get.put(RegisterController());
 
     return Scaffold(
-      appBar: AppBar(title: const Text('Register')),
+      appBar: AppBar(title: Text(tr('register'))),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
           children: [
             TextField(
               controller: getcontroller.emailController,
-              decoration: const InputDecoration(labelText: 'Email'),
+              decoration: InputDecoration(labelText: tr('email')),
             ),
             TextField(
               controller: getcontroller.passwordController,
-              decoration: const InputDecoration(labelText: 'Password'),
+              decoration: InputDecoration(labelText: tr('password')),
               obscureText: true,
             ),
             const SizedBox(height: 20),
             ElevatedButton(
               onPressed: getcontroller.register,
-              child: const Text('Register'),
+              child: Text(tr('register')),
             ),
           ],
         ),

@@ -1,4 +1,8 @@
 {
   "hello": "Hola",
-  "welcome": "Bienvenido"
+  "welcome": "Bienvenido",
+  "login": "Iniciar sesión",
+  "register": "Registrarse",
+  "home": "Inicio",
+  "splash": "Pantalla de inicio"
 }

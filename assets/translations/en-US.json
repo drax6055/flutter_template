@@ -1,4 +1,8 @@
 {
   "hello": "Hello",
-  "welcome": "Welcome"
+  "welcome": "Welcome",
+  "login": "Login",
+  "register": "Register",
+  "home": "Home",
+  "splash": "Splash Screen"
 }
