@@ -1,14 +1,21 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart' as get_package;
+import 'package:get/get.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'services/dio_service.dart';
 import 'themes/app_theme.dart';
+import 'screens/splash_screen.dart';
+import 'services/auth_service.dart';
+import 'controllers/splash_controller.dart';
+import 'screens/home_screen.dart';
+import 'screens/login_screen.dart';
+import 'screens/register_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   DioService.init();
   await EasyLocalization.ensureInitialized();
+  await AuthService.init(); // Initialize one-time login check
 
   runApp(
     EasyLocalization(
@@ -41,7 +48,13 @@ class MyApp extends StatelessWidget {
           localizationsDelegates: context.localizationDelegates,
           supportedLocales: context.supportedLocales,
           locale: context.locale,
-          home: const MyHomePage(),
+          initialRoute: '/splash',
+          routes: {
+            '/splash': (context) => const SplashScreen(),
+            '/login': (context) => const LoginScreen(),
+            '/register': (context) => const RegisterScreen(),
+            '/home': (context) => const HomeScreen(),
+          },
         );
       },
     );
