@@ -6,12 +6,14 @@ import 'services/dio_service.dart';
 import 'themes/app_theme.dart';
 import 'services/auth_service.dart';
 import 'routes/app_pages.dart';
+import 'services/storage_service.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   DioService.init();
   await EasyLocalization.ensureInitialized();
   await AuthService.init();
+  await StorageService.init(); // Ensure StorageService is initialized.
 
   runApp(
     EasyLocalization(

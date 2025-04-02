@@ -11,7 +11,7 @@ class SplashController extends GetxController {
   }
 
   void _navigateToNextScreen() {
-    Future.delayed(const Duration(seconds: 2), () {
+    Future.delayed(const Duration(seconds: 2), () async {
       if (StorageService.isFirstLaunch) {
         Get.offNamed(Routes.selectLanguageScreen);
       } else if (AuthService.isLoggedIn) {
