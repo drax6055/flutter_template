@@ -13,7 +13,7 @@ void main() async {
   DioService.init();
   await EasyLocalization.ensureInitialized();
   await AuthService.init();
-  await StorageService.init(); // Ensure StorageService is initialized.
+  await StorageService.init(); 
 
   runApp(
     EasyLocalization(
